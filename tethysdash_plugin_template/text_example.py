@@ -9,6 +9,11 @@ class TextExample(base.DataSource):
     visualization_group = "Example"
     visualization_label = "Text Example"
     visualization_type = "text"
+    visualization_tags = [
+        "example",
+        "text",
+    ]
+    visualization_description = "An example plugin for the text visualization"
 
     def __init__(self, metadata=None):
         super(TextExample, self).__init__(metadata=metadata)

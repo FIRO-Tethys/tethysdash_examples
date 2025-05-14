@@ -9,6 +9,11 @@ class VariableInputExample(base.DataSource):
     visualization_group = "Example"
     visualization_label = "Variable Input Example"
     visualization_type = "variable_input"
+    visualization_tags = [
+        "example",
+        "variable input",
+    ]
+    visualization_description = "An example plugin for the variable input visualization"
 
     def __init__(self, metadata=None):
         super(VariableInputExample, self).__init__(metadata=metadata)

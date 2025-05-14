@@ -9,7 +9,11 @@ class MapExample(base.DataSource):
     visualization_group = "Example"
     visualization_label = "Map Example"
     visualization_type = "map"
-    _user_parameters = []
+    visualization_tags = [
+        "example",
+        "map",
+    ]
+    visualization_description = "An example plugin for the map visualization"
 
     def __init__(self, metadata=None, **kwargs):
         super(MapExample, self).__init__(metadata=metadata)

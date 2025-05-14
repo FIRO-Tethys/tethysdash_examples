@@ -9,6 +9,11 @@ class TableExample(base.DataSource):
     visualization_group = "Example"
     visualization_label = "Table Example"
     visualization_type = "table"
+    visualization_tags = [
+        "example",
+        "table",
+    ]
+    visualization_description = "An example plugin for the table visualization"
 
     def __init__(self, metadata=None):
         super(TableExample, self).__init__(metadata=metadata)
