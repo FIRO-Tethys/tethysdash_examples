@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "tethysdash_plugin_template"
+authors = [{ name = "Aquaveo LLC", email = "ckrewson@aquaveo.com" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+classifiers = ["License :: OSI Approved :: MIT License"]
+version = "0.0.2"
+description = "Example respository for TethysDash Plugins"
+requires-python = ">=3.6"
+dependencies = [
+    "intake>=0.6.6",
+]
+
+[project.urls]
+Homepage = "https://github.com/FIRO-Tethys/tethysdash_plugin_template"
+Issues = "https://github.com/FIRO-Tethys/tethysdash_plugin_template/issues"
+
+[project.entry-points."intake.drivers"]
+template_plot_example = "tethysdash_plugin_template.plot_example:PlotlyExample"
+template_table_example = "tethysdash_plugin_template.table_example:TableExample"
+template_image_example = "tethysdash_plugin_template.image_example:ImageExample"
+template_card_example = "tethysdash_plugin_template.card_example:CardExample"
+template_text_example = "tethysdash_plugin_template.text_example:TextExample"
+template_variable_input_example = "tethysdash_plugin_template.variable_input_example:VariableInputExample"
+template_map_example = "tethysdash_plugin_template.map_example:MapExample"
+
+[tool.setuptools]
+include-package-data = true
+zip-safe = false
+
+[tool.setuptools.packages.find]
+include = ["*"]
+
+[tool.setuptools.package-data]
+"tethysdash_plugin_template" = ["static/*.png"]

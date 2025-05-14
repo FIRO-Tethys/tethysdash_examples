@@ -1,0 +1,1 @@
+tethysdash_plugin_template
