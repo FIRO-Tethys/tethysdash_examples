@@ -1,0 +1,35 @@
+{
+  "name": "Great Lakes Water levels",
+  "description": "This is an example of a preconfigured map with dynamic chart updates of click.",
+  "accessGroups": [],
+  "unrestrictedPlacement": false,
+  "notes": "",
+  "gridItems": [
+    {
+      "i": "2",
+      "x": 0,
+      "y": 23,
+      "w": 99,
+      "h": 24,
+      "source": "great_lakes_plots",
+      "args_string": {
+        "lake": "${Lake}"
+      },
+      "metadata_string": {
+        "customMessaging": {
+          "Lake": "please select a lake to view water levels."
+        }
+      }
+    },
+    {
+      "i": "1",
+      "x": 0,
+      "y": 0,
+      "w": 99,
+      "h": 23,
+      "source": "great_lakes_map",
+      "args_string": {},
+      "metadata_string": {}
+    }
+  ]
+}

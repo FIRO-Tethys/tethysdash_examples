@@ -1,0 +1,139 @@
+{
+  "name": "Yuba/Feather Forecasting",
+  "description": "An example of using vector tiles and dynamic visualizations.",
+  "accessGroups": [],
+  "unrestrictedPlacement": false,
+  "notes": "",
+  "gridItems": [
+    {
+      "i": "1",
+      "x": 36,
+      "y": 0,
+      "w": 31,
+      "h": 44,
+      "source": "Map",
+      "args_string": {
+        "baseMap": "https://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer",
+        "layers": [
+          {
+            "configuration": {
+              "type": "VectorTileLayer",
+              "props": {
+                "name": "Feather Watershed",
+                "source": {
+                  "type": "Vector Tile",
+                  "props": {
+                    "urls": [
+                      "https://tiles.arcgis.com/tiles/mTOFnKbooM3mcN0d/arcgis/rest/services/Feather_River_Watershed/VectorTileServer/tile/{z}/{y}/{x}.pbf"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          {
+            "configuration": {
+              "type": "VectorTileLayer",
+              "props": {
+                "name": "Yuba Watershed",
+                "source": {
+                  "type": "Vector Tile",
+                  "props": {
+                    "urls": [
+                      "https://tiles.arcgis.com/tiles/mTOFnKbooM3mcN0d/arcgis/rest/services/Yuba_River_Watershed/VectorTileServer/tile/{z}/{y}/{x}.pbf"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          {
+            "configuration": {
+              "type": "ImageLayer",
+              "props": {
+                "name": "RFC Forecasts",
+                "source": {
+                  "type": "ESRI Image and Map Service",
+                  "props": {
+                    "url": "https://mapservices.weather.noaa.gov/eventdriven/rest/services/water/riv_gauges/MapServer"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "layerControl": true,
+        "viewConfig": {
+          "center": [-13453035.885105578, 4839623.9856214775],
+          "zoom": 9.025537989810516
+        }
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "2",
+      "x": 67,
+      "y": 6,
+      "w": 33,
+      "h": 18,
+      "source": "cnrfc_10day_streamflow_volume_accumulation",
+      "args_string": {
+        "gauge_location": "${Location}"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "3",
+      "x": 67,
+      "y": 0,
+      "w": 33,
+      "h": 6,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "Location",
+        "variable_options_source": "CNRFC: 10-Day Daily Maximum Streamflow Probability - Gauge Location",
+        "initial_value": "MRYC1"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "4",
+      "x": 67,
+      "y": 24,
+      "w": 33,
+      "h": 20,
+      "source": "cnrfc_10day_hourly_maximum_streamflow_probability",
+      "args_string": {
+        "gauge_location": "${Location}"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "6",
+      "x": 0,
+      "y": 6,
+      "w": 36,
+      "h": 38,
+      "source": "cw3e_qpf",
+      "args_string": {
+        "HUC8": "${HUC}",
+        "QPF_visualization": "10-Day Accumulated Ensemble QPF"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "7",
+      "x": 0,
+      "y": 0,
+      "w": 36,
+      "h": 6,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "HUC",
+        "variable_options_source": "CW3E: 10-day Model Precipitation Forecasts - HUC8",
+        "initial_value": "18020123"
+      },
+      "metadata_string": {}
+    }
+  ]
+}

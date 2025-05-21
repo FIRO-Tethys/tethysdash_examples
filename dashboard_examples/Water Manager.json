@@ -1,0 +1,227 @@
+{
+  "name": "Water Manager",
+  "description": "A dynamic dashboard with dropdowns that update a variety of charts that a water manager may use.",
+  "accessGroups": [],
+  "unrestrictedPlacement": false,
+  "notes": "",
+  "gridItems": [
+    {
+      "i": "2",
+      "x": 0,
+      "y": 5,
+      "w": 25,
+      "h": 33,
+      "source": "cw3e_qpf",
+      "args_string": {
+        "HUC8": "${HUC8}",
+        "QPF_visualization": "10-Day Accumulated Ensemble QPF"
+      },
+      "metadata_string": {
+        "aspectRatio": 1
+      }
+    },
+    {
+      "i": "3",
+      "x": 25,
+      "y": 5,
+      "w": 25,
+      "h": 33,
+      "source": "cw3e_qpf",
+      "args_string": {
+        "HUC8": "${HUC8}",
+        "QPF_visualization": "10-Day 6-Hour Ensemble QPF"
+      },
+      "metadata_string": {
+        "aspectRatio": 1
+      }
+    },
+    {
+      "i": "5",
+      "x": 65,
+      "y": 43,
+      "w": 35,
+      "h": 25,
+      "source": "cnrfc_10day_streamflow_volume_accumulation",
+      "args_string": {
+        "gauge_location": "${Location}"
+      },
+      "metadata_string": {
+        "aspectRatio": 1.3333333333333333,
+        "border": {
+          "border": "1px solid black"
+        }
+      }
+    },
+    {
+      "i": "6",
+      "x": 0,
+      "y": 43,
+      "w": 65,
+      "h": 25,
+      "source": "cnrfc_hefs",
+      "args_string": {
+        "gauge_location": "${Location}",
+        "include_rain_melt_plot": true
+      },
+      "metadata_string": {
+        "border": {
+          "border": "1px solid black"
+        }
+      }
+    },
+    {
+      "i": "8",
+      "x": 50,
+      "y": 10,
+      "w": 50,
+      "h": 28,
+      "source": "cw3e_ar_landfall",
+      "args_string": {
+        "data_source": "${Model}",
+        "model_type": "${AR Type}",
+        "model_location": "${AR Location}"
+      },
+      "metadata_string": {
+        "aspectRatio": 2.170059093893631
+      }
+    },
+    {
+      "i": "9",
+      "x": 0,
+      "y": 0,
+      "w": 35,
+      "h": 5,
+      "source": "Text",
+      "args_string": {
+        "text": "<div><br></div><h1>HUC8 QPF</h1>"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "10",
+      "x": 35,
+      "y": 0,
+      "w": 15,
+      "h": 5,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "HUC8",
+        "variable_options_source": "CW3E: 10-day Model Precipitation Forecasts - HUC8",
+        "initial_value": "18010110"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "11",
+      "x": 0,
+      "y": 38,
+      "w": 65,
+      "h": 5,
+      "source": "Text",
+      "args_string": {
+        "text": "<div><br></div><h1>Streamflow Forecasting</h1>"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "12",
+      "x": 65,
+      "y": 68,
+      "w": 35,
+      "h": 25,
+      "source": "cnrfc_10day_hourly_maximum_streamflow_probability",
+      "args_string": {
+        "gauge_location": "${Location}"
+      },
+      "metadata_string": {
+        "border": {
+          "border": "1px solid black"
+        }
+      }
+    },
+    {
+      "i": "13",
+      "x": 65,
+      "y": 38,
+      "w": 35,
+      "h": 5,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "Location",
+        "variable_options_source": "CNRFC: 10-Day Daily Maximum Streamflow Probability - Gauge Location",
+        "initial_value": "CREC1"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "14",
+      "x": 50,
+      "y": 0,
+      "w": 50,
+      "h": 5,
+      "source": "Text",
+      "args_string": {
+        "text": "<div><br></div><h1>AR Landfall</h1>"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "15",
+      "x": 50,
+      "y": 5,
+      "w": 16,
+      "h": 5,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "Model",
+        "variable_options_source": "CW3E: AR Landfall Tool - Data Source",
+        "initial_value": "GFS Ensemble"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "16",
+      "x": 67,
+      "y": 5,
+      "w": 16,
+      "h": 5,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "AR Type",
+        "variable_options_source": "CW3E: AR Landfall Tool - Model Type",
+        "initial_value": "Probability of IVT >500 kg/m/s"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "17",
+      "x": 84,
+      "y": 5,
+      "w": 16,
+      "h": 5,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "AR Location",
+        "variable_options_source": "CW3E: AR Landfall Tool - Model Location",
+        "initial_value": "Coastal"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "18",
+      "x": 0,
+      "y": 68,
+      "w": 65,
+      "h": 25,
+      "source": "cnrfc_impact_statements",
+      "args_string": {
+        "gauge_location": "${Location}"
+      },
+      "metadata_string": {
+        "border": {
+          "border": "1px solid black"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "name": "RFC Max Stage Analysis",
+  "description": "This dashboard can be used to evaluate the NWC RFC Max Stage Map service and view a gauges forecast, NWM forecast, and impact statements.",
+  "accessGroups": [],
+  "unrestrictedPlacement": false,
+  "notes": "",
+  "gridItems": [
+    {
+      "i": "1",
+      "x": 0,
+      "y": 0,
+      "w": 33,
+      "h": 44,
+      "source": "Map",
+      "args_string": {
+        "baseMap": "https://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer",
+        "layers": [
+          {
+            "configuration": {
+              "type": "ImageLayer",
+              "props": {
+                "name": "RFC Max Forecast",
+                "source": {
+                  "type": "ESRI Image and Map Service",
+                  "props": {
+                    "url": "https://maps.water.noaa.gov/server/rest/services/rfc/rfc_max_forecast/MapServer"
+                  }
+                }
+              }
+            },
+            "attributeVariables": {
+              "Max Status - Forecast Trend": {
+                "nws_lid": "LID",
+                "feature_id": "Feature"
+              }
+            }
+          }
+        ],
+        "layerControl": false,
+        "viewConfig": {
+          "center": [-8606016.105161566, 4730132.45579878],
+          "zoom": 8.02553014293545
+        }
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "2",
+      "x": 33,
+      "y": 0,
+      "w": 35,
+      "h": 22,
+      "source": "nwmp_gauges_series",
+      "args_string": {
+        "id": "${LID}"
+      },
+      "metadata_string": {
+        "customMessaging": {
+          "LID": "Select a gauge on the map to see the stage hydrograph"
+        },
+        "border": {
+          "border": "1px solid black"
+        }
+      }
+    },
+    {
+      "i": "3",
+      "x": 33,
+      "y": 22,
+      "w": 67,
+      "h": 22,
+      "source": "nwmp_reaches_series",
+      "args_string": {
+        "id": "${Feature}"
+      },
+      "metadata_string": {
+        "border": {
+          "border": "1px solid black"
+        },
+        "customMessaging": {
+          "Feature": "Select a gauge on the map to see the NWM forecast"
+        }
+      }
+    },
+    {
+      "i": "5",
+      "x": 68,
+      "y": 0,
+      "w": 32,
+      "h": 22,
+      "source": "cnrfc_impact_statements",
+      "args_string": {
+        "gauge_location": "${LID}"
+      },
+      "metadata_string": {
+        "border": {
+          "border": "1px solid black"
+        },
+        "customMessaging": {
+          "LID": "Select a gauge to see impact statements"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "name": "Map and Text Updates",
+  "description": "This is an example of custom text message that updates on a map click event.",
+  "accessGroups": [],
+  "unrestrictedPlacement": true,
+  "notes": "",
+  "gridItems": [
+    {
+      "i": "1",
+      "x": 0,
+      "y": 0,
+      "w": 38,
+      "h": 47,
+      "source": "Map",
+      "args_string": {
+        "baseMap": "https://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer",
+        "layers": [
+          {
+            "configuration": {
+              "type": "ImageLayer",
+              "props": {
+                "name": "RFC 5-Day Max Forecast",
+                "source": {
+                  "type": "ESRI Image and Map Service",
+                  "props": {
+                    "url": "https://maps.water.noaa.gov/server/rest/services/rfc/rfc_max_forecast/MapServer"
+                  }
+                }
+              }
+            },
+            "attributeVariables": {
+              "Max Status - Forecast Trend": {
+                "nws_lid": "LID",
+                "units": "units",
+                "major_threshold": "major_threshold",
+                "moderate_threshold": "moderate_threshold",
+                "minor_threshold": "minor_threshold",
+                "action_threshold": "action_threshold",
+                "issued_time": "latest_issue_time",
+                "max_value": "max_stage",
+                "max_status": "max_status",
+                "max_value_timestep": "max_stage_timestep"
+              }
+            },
+            "omittedPopupAttributes": {
+              "Max Status - Forecast Trend": ["geom", "oid"]
+            }
+          }
+        ],
+        "layerControl": true,
+        "viewConfig": {
+          "center": [-13516353.996280678, 4919492.236596072],
+          "zoom": 7.250394137489687
+        }
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "6",
+      "x": 62,
+      "y": 0,
+      "w": 38,
+      "h": 20,
+      "source": "cnrfc_impact_statements",
+      "args_string": {
+        "gauge_location": "${LID}"
+      },
+      "metadata_string": {
+        "border": {
+          "border": "1px solid black"
+        }
+      }
+    },
+    {
+      "i": "7",
+      "x": 38,
+      "y": 20,
+      "w": 62,
+      "h": 27,
+      "source": "cnrfc_hefs",
+      "args_string": {
+        "gauge_location": "${LID}",
+        "include_rain_melt_plot": true
+      },
+      "metadata_string": {
+        "border": {
+          "border": "1px solid black"
+        }
+      }
+    },
+    {
+      "i": "8",
+      "x": 38,
+      "y": 1,
+      "w": 24,
+      "h": 18,
+      "source": "Text",
+      "args_string": {
+        "text": "<h1>${LID}</h1><div><br></div><div>Action Threshold - ${action_threshold} ${units}</div><div>Minor Threshold - ${minor_threshold} ${units}</div><div>Moderate Threshold - ${moderate_threshold} ${units}</div><div><span>Major</span><span>&nbsp;</span>Threshold - ${major_threshold} ${units}</div><div><br></div><div>Latest Issue Time - ${latest_issue_time}</div><div><br></div><div>Flood stage is expected to reach up to ${max_stage} ${units} (${max_status}) on ${max_stage_timestep}</div>"
+      },
+      "metadata_string": {
+        "customMessaging": {
+          "LID": "Click on the Map to get flood forecast information"
+        },
+        "border": {
+          "border": "1px solid #000000"
+        },
+        "backgroundColor": "#8683833b"
+      }
+    }
+  ]
+}
