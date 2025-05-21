@@ -1,8 +1,0 @@
-[intake.drivers]
-template_card_example = tethysdash_plugin_template.card_example:CardExample
-template_image_example = tethysdash_plugin_template.image_example:ImageExample
-template_map_example = tethysdash_plugin_template.map_example:MapExample
-template_plot_example = tethysdash_plugin_template.plot_example:PlotlyExample
-template_table_example = tethysdash_plugin_template.table_example:TableExample
-template_text_example = tethysdash_plugin_template.text_example:TextExample
-template_variable_input_example = tethysdash_plugin_template.variable_input_example:VariableInputExample
