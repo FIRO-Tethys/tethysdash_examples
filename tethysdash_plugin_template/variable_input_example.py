@@ -16,7 +16,7 @@ class VariableInputExample(base.DataSource):
     visualization_description = "An example plugin for the variable input visualization"
 
     def __init__(self, metadata=None):
-        super(VariableInputExample, self).__init__(metadata=metadata)
+        super().__init__(metadata=metadata)
 
     def read(self):
         """

@@ -16,7 +16,7 @@ class TableExample(base.DataSource):
     visualization_description = "An example plugin for the table visualization"
 
     def __init__(self, metadata=None):
-        super(TableExample, self).__init__(metadata=metadata)
+        super().__init__(metadata=metadata)
 
     def read(self):
         """

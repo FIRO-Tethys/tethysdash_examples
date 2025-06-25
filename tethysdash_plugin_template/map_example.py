@@ -16,7 +16,7 @@ class MapExample(base.DataSource):
     visualization_description = "An example plugin for the map visualization"
 
     def __init__(self, metadata=None, **kwargs):
-        super(MapExample, self).__init__(metadata=metadata)
+        super().__init__(metadata=metadata)
 
     def read(self):
 

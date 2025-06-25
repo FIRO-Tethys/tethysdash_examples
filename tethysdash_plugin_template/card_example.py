@@ -16,7 +16,7 @@ class CardExample(base.DataSource):
     visualization_description = "An example plugin for the card visualization"
 
     def __init__(self, metadata=None):
-        super(CardExample, self).__init__(metadata=metadata)
+        super().__init__(metadata=metadata)
 
     def read(self):
         """
