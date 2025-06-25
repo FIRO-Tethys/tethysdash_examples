@@ -36,6 +36,18 @@ class MapLayerExample(base.DataSource):
                 "opacity": 0.5,
             },
             "layerVisibility": True,
+            "style": {
+                "type": "Style",
+                "props": {
+                    "stroke": {
+                        "type": "Stroke",
+                        "props": {
+                            "color": "#501020",
+                            "width": 1,
+                        },
+                    },
+                },
+            },
         }
 
         aliases = {
@@ -61,9 +73,16 @@ class MapLayerExample(base.DataSource):
             ]
         }
 
+        legend = {
+            "title": "Some Title",
+            "items": [{"label": "Some label", "color": "green", "symbol": "square"}],
+        }
+
         return {
             "configuration": layer_configuration,
             "attributeVariables": variables,
             "omittedPopupAttributes": omitted_attributes,
             "attributeAliases": aliases,
+            "queryable": True,
+            "legend": legend,
         }
