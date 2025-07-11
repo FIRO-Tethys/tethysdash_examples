@@ -32,6 +32,7 @@ template_map_example = "tethysdash_plugin_template.map_example:MapExample"
 template_map_layer_example = "tethysdash_plugin_template.map_layer_example:MapLayerExample"
 nyc_car_theft_map = "plugin_examples.nyc_car_theft.map:Map"
 nyc_car_theft_chart = "plugin_examples.nyc_car_theft.chart:Chart"
+wildfire_visualizer_map = "plugin_examples.wildfire_visualizer.map:Map"
 
 [tool.setuptools]
 include-package-data = true
@@ -42,4 +43,4 @@ include = ["*"]
 
 [tool.setuptools.package-data]
 "tethysdash_plugin_template" = ["static/*.png"]
-"plugin_examples" = ["static/*.png", "nyc_car_theft/*.geojson", "nyc_car_theft/*.json"]
+"plugin_examples" = ["static/*.png", "nyc_car_theft/*.geojson", "nyc_car_theft/*.json", "wildfire_visualizer/*.json"]
