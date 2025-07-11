@@ -42,4 +42,4 @@ include = ["*"]
 
 [tool.setuptools.package-data]
 "tethysdash_plugin_template" = ["static/*.png"]
-"plugin_examples" = ["nyc_car_theft/*.geojson", "nyc_car_theft/*.json"]
+"plugin_examples" = ["static/*.png", "nyc_car_theft/*.geojson", "nyc_car_theft/*.json"]
