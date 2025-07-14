@@ -1,0 +1,126 @@
+{
+  "name": "NYC Car Theft Stats Viewer",
+  "description": "test",
+  "accessGroups": [
+    "public"
+  ],
+  "unrestrictedPlacement": true,
+  "image": "/static/tethysdash/images/tethys_dash.png",
+  "notes": "",
+  "gridItems": [
+    {
+      "i": "1",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "h": 33,
+      "source": "nyc_car_theft_map",
+      "args_string": {
+        "borough": "${Borough}",
+        "start": "${Start Date}",
+        "end": "${End Date}",
+        "group_by": "${Group By}"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "6",
+      "x": 0,
+      "y": 32,
+      "w": 100,
+      "h": 15,
+      "source": "nyc_car_theft_chart",
+      "args_string": {
+        "borough": "${Borough}",
+        "start": "${Start Date}",
+        "end": "${End Date}",
+        "sort_by": "${Sort By}"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "7",
+      "x": 82,
+      "y": 0,
+      "w": 18,
+      "h": 19,
+      "source": "Text",
+      "args_string": {
+        "text": "<p> </p>"
+      },
+      "metadata_string": {
+        "backgroundColor": "#a7a7a7"
+      }
+    },
+    {
+      "i": "2",
+      "x": 82,
+      "y": 0,
+      "w": 18,
+      "h": 6,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "Borough",
+        "variable_options_source": "NYC Car Theft: NYC Map - Borough",
+        "initial_value": "Bronx"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "8",
+      "x": 4,
+      "y": 32,
+      "w": 13,
+      "h": 6,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "Sort By",
+        "variable_options_source": "NYC Car Theft: Car Theft Stats Chart - Sort By",
+        "initial_value": "Day"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "3",
+      "x": 82,
+      "y": 5,
+      "w": 18,
+      "h": 6,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "Start Date",
+        "variable_options_source": "date",
+        "initial_value": "03/30/2025"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "4",
+      "x": 82,
+      "y": 9,
+      "w": 18,
+      "h": 6,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "End Date",
+        "variable_options_source": "date",
+        "initial_value": "03/31/2025"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "5",
+      "x": 82,
+      "y": 13,
+      "w": 18,
+      "h": 6,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "Group By",
+        "variable_options_source": "NYC Car Theft: NYC Map - Group By",
+        "initial_value": "Time of day"
+      },
+      "metadata_string": {}
+    }
+  ]
+}

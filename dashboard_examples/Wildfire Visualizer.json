@@ -1,0 +1,116 @@
+{
+  "name": "Wildfire Visualizer",
+  "description": "TethysDash version of Wildfire Visualizer",
+  "accessGroups": [
+    "public"
+  ],
+  "unrestrictedPlacement": true,
+  "image": "/static/tethysdash/images/tethys_dash.png",
+  "notes": "",
+  "gridItems": [
+    {
+      "i": "1",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "h": 47,
+      "source": "wildfire_visualizer_map",
+      "args_string": {
+        "satellite": "${Satellite}",
+        "days": "${Days}",
+        "date": "${Date}",
+        "color_code": "${Color Code}",
+        "country": "${Country}"
+      },
+      "metadata_string": {
+        "customMessaging": {
+          "error": "Failed to get data. Try again."
+        }
+      }
+    },
+    {
+      "i": "7",
+      "x": 80,
+      "y": 0,
+      "w": 20,
+      "h": 26,
+      "source": "Text",
+      "args_string": {
+        "text": "<p> </p>"
+      },
+      "metadata_string": {
+        "backgroundColor": "#b6b5b5"
+      }
+    },
+    {
+      "i": "2",
+      "x": 80,
+      "y": 0,
+      "w": 20,
+      "h": 6,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "Satellite",
+        "variable_options_source": "Wildfire Visualizer: Map - Satellite",
+        "initial_value": "MODIS_NRT"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "6",
+      "x": 80,
+      "y": 5,
+      "w": 20,
+      "h": 6,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "Country",
+        "variable_options_source": "Wildfire Visualizer: Map - Country",
+        "initial_value": "USA"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "5",
+      "x": 80,
+      "y": 10,
+      "w": 20,
+      "h": 6,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "Color Code",
+        "variable_options_source": "Wildfire Visualizer: Map - Color Code",
+        "initial_value": "Confidence"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "3",
+      "x": 80,
+      "y": 15,
+      "w": 20,
+      "h": 6,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "Days",
+        "variable_options_source": "Wildfire Visualizer: Map - Days",
+        "initial_value": "1"
+      },
+      "metadata_string": {}
+    },
+    {
+      "i": "4",
+      "x": 80,
+      "y": 20,
+      "w": 20,
+      "h": 6,
+      "source": "Variable Input",
+      "args_string": {
+        "variable_name": "Date",
+        "variable_options_source": "date",
+        "initial_value": "07/11/2025"
+      },
+      "metadata_string": {}
+    }
+  ]
+}
