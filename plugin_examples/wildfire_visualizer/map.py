@@ -48,7 +48,7 @@ class Map(base.DataSource):
         super().__init__(metadata=metadata)
 
     def read(self):
-        token = os.environ["FIRMS_api_token"]
+        token = os.environ["FIRMS_API_TOKEN"]
 
         parsed_date = pd.to_datetime(self.date).date()
         formatted_date = parsed_date.strftime("%Y-%m-%d")
