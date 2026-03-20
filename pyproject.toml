@@ -14,7 +14,9 @@ description = "Example respository for TethysDash Plugins"
 requires-python = ">=3.6"
 dependencies = [
     "intake>=0.6.6",
-    "sodapy>=2.2.0"
+    "sodapy>=2.2.0",
+    "scikit-learn",
+    "geopandas"
 ]
 
 [project.urls]
@@ -33,6 +35,9 @@ template_map_layer_example = "tethysdash_plugin_template.map_layer_example:MapLa
 nyc_car_theft_map = "plugin_examples.nyc_car_theft.map:Map"
 nyc_car_theft_chart = "plugin_examples.nyc_car_theft.chart:Chart"
 wildfire_visualizer_map = "plugin_examples.wildfire_visualizer.map:Map"
+machine_learning = "tethysdash_plugin_template.machine_learning:MachineLearning"
+map_geometry_example = "tethysdash_plugin_template.map_geometry:MapGeometryExample"
+map_geometry_layer_example = "tethysdash_plugin_template.map_geometry_layer:MapGeometryLayerExample"
 
 [tool.setuptools]
 include-package-data = true
