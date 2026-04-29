@@ -7,14 +7,12 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.svm import SVR
 from sklearn.metrics import r2_score
 import json
-from intake.source import base
+from tethysapp.tethysdash.plugin_helpers import TethysDashPlugin
 
 
-class MachineLearning(base.DataSource):
-    container = "python"
-    version = "0.0.1"
+class MachineLearning(TethysDashPlugin):
     name = "machine_learning"
-    visualization_args = {
+    args = {
         "model_type": [
             "linear_regression",
             "decision_tree",
@@ -23,19 +21,13 @@ class MachineLearning(base.DataSource):
             "svr",
         ]
     }
-    visualization_group = "Machine Learning"
-    visualization_label = "Simple ML Model Demo"
-    visualization_type = "plotly"
-    visualization_tags = ["machine_learning", "plotly", "impact", "statements"]
-    visualization_description = (
-        "An plugin showing an example of a machine learning model output"
-    )
+    group = "Machine Learning"
+    label = "Simple ML Model Demo"
+    type = "plotly"
+    tags = ["machine_learning", "plotly", "impact", "statements"]
+    description = "An plugin showing an example of a machine learning model output"
 
-    def __init__(self, model_type, metadata=None):
-        self.model_type = model_type
-        super().__init__(metadata=metadata)
-
-    def read(self):
+    def run(self):
         """
         Demonstrate a simple ML model interactively using Plotly.
 

@@ -1,32 +1,19 @@
-from intake.source import base
+from tethysapp.tethysdash.plugin_helpers import TethysDashPlugin
 
 
-class MapGeometryLayerExample(base.DataSource):
-    container = "python"
-    version = "0.0.1"
+class MapGeometryLayerExample(TethysDashPlugin):
     name = "map_geometry_layer_example"
-    visualization_args = {}
-    visualization_group = "Example"
-    visualization_label = "Map Geometry Example Layer"
-    visualization_type = "map_layer"
-    visualization_tags = ["example", "map", "map_layer"]
-    visualization_description = "An layer for the map geometry example plugin"
+    args = {}
+    group = "Example"
+    label = "Map Geometry Example Layer"
+    type = "map_layer"
+    tags = ["example", "map", "map_layer"]
+    description = "An layer for the map geometry example plugin"
 
-    def __init__(self, metadata=None, **kwargs):
-        super().__init__(metadata=metadata)
-
-    def read(self):
+    def run(self):
         """
         Return map layer configuration
         """
-        layer_source = {
-            "type": "ESRI Feature Service",
-            "props": {
-                "url": "https://p3eplmys2rvchkjx.svcs.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Census_2020_DHC_Total_Population/FeatureServer",
-                "layer": "3",
-            },
-        }
-
         layer_configuration = {
             "type": "VectorLayer",
             "props": {

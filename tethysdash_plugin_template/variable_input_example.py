@@ -1,24 +1,19 @@
-from intake.source import base
+from tethysapp.tethysdash.plugin_helpers import TethysDashPlugin
 
 
-class VariableInputExample(base.DataSource):
-    container = "python"
-    version = "0.0.1"
+class VariableInputExample(TethysDashPlugin):
     name = "variable_input_example"
-    visualization_args = {}
-    visualization_group = "Example"
-    visualization_label = "Variable Input Example"
-    visualization_type = "variable_input"
-    visualization_tags = [
+    args = {}
+    group = "Example"
+    label = "Variable Input Example"
+    type = "variable_input"
+    tags = [
         "example",
         "variable input",
     ]
-    visualization_description = "An example plugin for the variable input visualization"
+    description = "An example plugin for the variable input visualization"
 
-    def __init__(self, metadata=None):
-        super().__init__(metadata=metadata)
-
-    def read(self):
+    def run(self):
         """
         Return the data for the text
         """

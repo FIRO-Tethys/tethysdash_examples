@@ -1,24 +1,18 @@
-from intake.source import base
+from tethysapp.tethysdash.plugin_helpers import TethysDashPlugin
 
 
-class PlotlyExample(base.DataSource):
-    container = "python"
-    version = "0.0.1"
+class PlotlyExample(TethysDashPlugin):
     name = "plotly_example"
-    visualization_args = {}  # Arguments provided from TethysDash used for processing
-    visualization_group = "Example"  # Group for visualization plugin discovery
-    visualization_label = "Plotly Example"  # Visualization plugin name
-    visualization_type = "plotly"  # Type of visualization
-    visualization_tags = [
+    group = "Example"  # Group for visualization plugin discovery
+    label = "Plotly Example"  # Visualization plugin name
+    type = "plotly"  # Type of visualization
+    tags = [
         "example",
         "plotly",
     ]  # Tags for visualization plugin discovery
-    visualization_description = "An example plugin for the plotly visualization"
+    description = "An example plugin for the plotly visualization"
 
-    def __init__(self, metadata=None):
-        super().__init__(metadata=metadata)
-
-    def read(self):
+    def run(self):
         """
         Return plotly information
         """

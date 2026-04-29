@@ -1,5 +1,5 @@
 import json
-from intake.source import base
+from tethysapp.tethysdash.plugin_helpers import TethysDashPlugin
 import requests
 import geopandas as gpd
 import pandas as pd
@@ -108,32 +108,24 @@ def get_label_from_value(value):
     return None
 
 
-class MapGeometryExample(base.DataSource):
-    container = "python"
-    version = "0.0.1"
+class MapGeometryExample(TethysDashPlugin):
     name = "map_geometry_example"
-    visualization_args = {
+    args = {
         "map_polygon": "text",
         "pop_field": pop_fields,
         "top_n": "text",
     }  # Arguments provided from TethysDash used for processing
-    visualization_group = "Example"  # Group for visualization plugin discovery
-    visualization_label = "Map Geometry Example"  # Visualization plugin name
-    visualization_type = "plotly"  # Type of visualization
-    visualization_tags = [
+    group = "Example"  # Group for visualization plugin discovery
+    label = "Map Geometry Example"  # Visualization plugin name
+    type = "plotly"  # Type of visualization
+    tags = [
         "example",
         "plotly",
         "map",
     ]  # Tags for visualization plugin discovery
-    visualization_description = "An example plugin for the map geometry visualization"
+    description = "An example plugin for the map geometry visualization"
 
-    def __init__(self, map_polygon, pop_field, top_n, metadata=None):
-        super().__init__(metadata=metadata)
-        self.map_polygon = map_polygon
-        self.pop_field = pop_field
-        self.top_n = top_n
-
-    def read(self):
+    def run(self):
         """
         Return plotly information
         """

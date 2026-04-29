@@ -1,21 +1,16 @@
-from intake.source import base
+from tethysapp.tethysdash.plugin_helpers import TethysDashPlugin
 
 
-class MapLayerExample(base.DataSource):
-    container = "python"
-    version = "0.0.1"
+class MapLayerExample(TethysDashPlugin):
     name = "map_example"
-    visualization_args = {}
-    visualization_group = "Example"
-    visualization_label = "Map Layer Template Example"
-    visualization_type = "map_layer"
-    visualization_tags = ["example", "map", "map_layer"]
-    visualization_description = "An example plugin for the map layer template"
+    args = {}
+    group = "Example"
+    label = "Map Layer Template Example"
+    type = "map_layer"
+    tags = ["example", "map", "map_layer"]
+    description = "An example plugin for the map layer template"
 
-    def __init__(self, metadata=None, **kwargs):
-        super().__init__(metadata=metadata)
-
-    def read(self):
+    def run(self):
         """
         Return map layer configuration
         """

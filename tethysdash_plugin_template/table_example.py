@@ -1,24 +1,19 @@
-from intake.source import base
+from tethysapp.tethysdash.plugin_helpers import TethysDashPlugin
 
 
-class TableExample(base.DataSource):
-    container = "python"
-    version = "0.0.1"
+class TableExample(TethysDashPlugin):
     name = "table_example"
-    visualization_args = {}
-    visualization_group = "Example"
-    visualization_label = "Table Example"
-    visualization_type = "table"
-    visualization_tags = [
+    args = {}
+    group = "Example"
+    label = "Table Example"
+    type = "table"
+    tags = [
         "example",
         "table",
     ]
-    visualization_description = "An example plugin for the table visualization"
+    description = "An example plugin for the table visualization"
 
-    def __init__(self, metadata=None):
-        super().__init__(metadata=metadata)
-
-    def read(self):
+    def run(self):
         """
         Return table data
         """

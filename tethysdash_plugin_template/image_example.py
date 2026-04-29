@@ -1,24 +1,19 @@
-from intake.source import base
+from tethysapp.tethysdash.plugin_helpers import TethysDashPlugin
 
 
-class ImageExample(base.DataSource):
-    container = "python"
-    version = "0.0.1"
+class ImageExample(TethysDashPlugin):
     name = "image_example"
-    visualization_args = {}
-    visualization_group = "Example"
-    visualization_label = "Image Example"
-    visualization_type = "image"
-    visualization_tags = [
+    args = {}
+    group = "Example"
+    label = "Image Example"
+    type = "image"
+    tags = [
         "example",
         "image",
     ]
-    visualization_description = "An example plugin for the image visualization"
+    description = "An example plugin for the image visualization"
 
-    def __init__(self, metadata=None):
-        super().__init__(metadata=metadata)
-
-    def read(self):
+    def run(self):
         """
         Return an image url
         """

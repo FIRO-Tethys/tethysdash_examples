@@ -1,24 +1,19 @@
-from intake.source import base
+from tethysapp.tethysdash.plugin_helpers import TethysDashPlugin
 
 
-class MapExample(base.DataSource):
-    container = "python"
-    version = "0.0.1"
+class MapExample(TethysDashPlugin):
     name = "map_example"
-    visualization_args = {}
-    visualization_group = "Example"
-    visualization_label = "Map Example"
-    visualization_type = "map"
-    visualization_tags = [
+    args = {}
+    group = "Example"
+    label = "Map Example"
+    type = "map"
+    tags = [
         "example",
         "map",
     ]
-    visualization_description = "An example plugin for the map visualization"
+    description = "An example plugin for the map visualization"
 
-    def __init__(self, metadata=None, **kwargs):
-        super().__init__(metadata=metadata)
-
-    def read(self):
+    def run(self):
 
         return {
             "baseMap": "https://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer",

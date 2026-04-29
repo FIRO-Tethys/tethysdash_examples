@@ -1,24 +1,19 @@
-from intake.source import base
+from tethysapp.tethysdash.plugin_helpers import TethysDashPlugin
 
 
-class CardExample(base.DataSource):
-    container = "python"
-    version = "0.0.1"
+class CardExample(TethysDashPlugin):
     name = "card_example"
-    visualization_args = {}
-    visualization_group = "Example"
-    visualization_label = "Card Example"
-    visualization_type = "card"
-    visualization_tags = [
+    args = {}
+    group = "Example"
+    label = "Card Example"
+    type = "card"
+    tags = [
         "example",
         "card",
     ]
-    visualization_description = "An example plugin for the card visualization"
+    description = "An example plugin for the card visualization"
 
-    def __init__(self, metadata=None):
-        super().__init__(metadata=metadata)
-
-    def read(self):
+    def run(self):
         """
         Return the data for the cards
         """
