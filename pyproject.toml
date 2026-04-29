@@ -16,7 +16,8 @@ dependencies = [
     "intake>=0.6.6",
     "sodapy>=2.2.0",
     "scikit-learn",
-    "geopandas"
+    "geopandas",
+    "geoglows",
 ]
 
 [project.urls]
