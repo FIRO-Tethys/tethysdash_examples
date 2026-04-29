@@ -38,6 +38,7 @@ wildfire_visualizer_map = "plugin_examples.wildfire_visualizer.map:Map"
 machine_learning = "tethysdash_plugin_template.machine_learning:MachineLearning"
 map_geometry_example = "tethysdash_plugin_template.map_geometry:MapGeometryExample"
 map_geometry_layer_example = "tethysdash_plugin_template.map_geometry_layer:MapGeometryLayerExample"
+geoglows_forecast_plot = "plugin_examples.tutorials.geoglows_plot:PlotlyExample"
 
 [tool.setuptools]
 include-package-data = true
